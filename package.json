@@ -1,6 +1,6 @@
 {
-  "homepage": "https://itsme-subid.github.io/Resume-Builder/",
-  "name": "resume-builder",
+  "homepage": "https://itsme-subid.github.io/MyNotebook/",
+  "name": "mynotebook",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
