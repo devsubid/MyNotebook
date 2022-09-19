@@ -1,0 +1,329 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+:root {
+  --light-color: #f0f6fc;
+  --dark-color: #0d1117;
+  --color-primary: #1f6feb;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--dark-color);
+  color: var(--light-color);
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  transition: all 0.15s ease;
+}
+
+.container {
+  margin-inline: auto;
+  width: min(90%, 70.5rem);
+}
+
+header {
+  position: sticky;
+  top: 0;
+  padding: 2rem 0;
+  z-index: 1;
+  background-color: var(--dark-color);
+  -webkit-box-shadow: 0 1px 10px 0 rgb(255 255 255 / 30%);
+  -moz-box-shadow: 0 1px 10px 0 rgb(255 255 255 / 30%);
+  box-shadow: 0 1px 10px 0 rgb(255 255 255 / 30%);
+}
+
+.headerWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+header h1:hover {
+  color: var(--color-primary);
+  text-decoration: underline 0.1em;
+}
+
+header ul {
+  display: flex;
+  gap: 2rem;
+}
+
+header li {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  user-select: none;
+}
+
+header a {
+  text-decoration: none;
+  color: var(--light-color);
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  padding: 0.5rem 1rem;
+  border-radius: 6rem;
+  transition: all 0.15s ease-in-out;
+}
+
+header a:hover,
+header a.active {
+  color: var(--dark-color);
+  background-color: var(--light-color);
+}
+
+#mode {
+  position: relative;
+  width: 3.5rem;
+  height: 2rem;
+  opacity: 0;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.modeToggler {
+  position: absolute;
+  width: 3.5rem;
+  height: 2rem;
+  background-color: var(--light-color);
+  border-radius: 2rem;
+  transition: all 0.15s ease;
+}
+
+.modeToggler:before {
+  content: "";
+  position: absolute;
+  top: 0.25rem;
+  left: 0.25rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background-color: var(--dark-color);
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
+  transition: all 0.15s ease;
+}
+
+#mode:checked ~ .modeToggler {
+  background-color: var(--dark-color);
+}
+
+#mode:checked ~ .modeToggler::before {
+  left: calc(100% - 1.5rem - 0.25rem);
+  background: var(--light-color);
+  box-shadow: none;
+}
+
+.light {
+  background-color: var(--light-color) !important;
+  color: var(--dark-color);
+}
+
+.light header {
+  background-color: var(--light-color);
+}
+
+.light header a {
+  color: var(--dark-color);
+}
+
+.light .active,
+.light header a:hover {
+  color: var(--light-color);
+  background-color: var(--dark-color);
+}
+
+.light header {
+  -webkit-box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.3);
+}
+
+.colorPaletteSwitch,
+.colorPaletteItem {
+  display: flex;
+  justify-content: center;
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid var(--light-color);
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.light .colorPaletteSwitch {
+  border: 1px solid var(--dark-color);
+}
+
+.primary {
+  width: 2rem;
+  height: 2rem;
+}
+
+.secondary {
+  width: 2rem;
+  height: 2rem;
+  background-color: var(--light-color);
+}
+
+.colorPalette {
+  position: absolute;
+  right: 5vw;
+  top: 5rem;
+  width: 250px;
+  height: 250px;
+  background-color: var(--color-primary);
+  -webkit-box-shadow: 0 1px 10px 0 rgb(255 255 255 / 20%);
+  -moz-box-shadow: 0 1px 10px 0 rgb(255 255 255 / 20%);
+  box-shadow: 0 1px 10px 0 rgb(255 255 255 / 20%);
+  z-index: 2;
+  border-radius: 0.5rem;
+  transform: scale(1);
+  transition: all 0.15s ease;
+}
+
+.light .colorPalette {
+  -webkit-box-shadow: 0 1px 10px 0 rgb(0 0 0 / 30%);
+  -moz-box-shadow: 0 1px 10px 0 rgb(0 0 0 / 30%);
+  box-shadow: 0 1px 10px 0 rgb(0 0 0 / 30%);
+}
+
+.colorPalette .colorPaletteItem {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.colorPalette .primary {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.colorPalette .secondary {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.grid-9 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+  padding: 1rem;
+}
+
+.grid-9 > * {
+  margin: auto;
+}
+
+.hidden {
+  transform: scale(0);
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(-5%);
+  z-index: -10;
+}
+
+.inputs {
+  padding: 1rem 0;
+}
+
+.inputs > * {
+  outline: none;
+}
+
+.inputs input,
+.inputs textarea {
+  color: var(--light-color);
+  border: 1px solid rgba(86, 86, 102, 0.25);
+  background: transparent;
+  padding: 1rem 0.75rem;
+  font-size: 1.25rem;
+  font-weight: 300;
+  line-height: 1.5;
+  border-radius: 0.375rem;
+  caret-color: var(--light-color);
+  width: 100%;
+}
+
+.inputs input::placeholder,
+.inputs textarea::placeholder {
+  color: var(--light-color);
+  opacity: 0.325;
+}
+
+.inputs button,
+.inputs button:active {
+  background-color: var(--light-color);
+  color: var(--dark-color);
+  border: 1px solid transparent;
+  padding: 0.85rem 1.5rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.5;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: all 0.15s linear;
+  max-width: 10rem;
+}
+
+.inputs button:hover {
+  background-color: transparent;
+  border: 1px solid var(--light-color);
+  color: var(--light-color);
+}
+
+.inputs button:active {
+  background-color: var(--light-color);
+  color: var(--dark-color);
+}
+
+.notes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+@media (max-width: 850px) {
+  .notes {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.note {
+  padding: 1rem;
+  border: 1px solid var(--light-color);
+  border-radius: 0.5rem;
+  max-height: 20rem;
+}
+
+.note {
+  overflow: auto;
+}
+
+.noteTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.noteTop .svg {
+  display: flex;
+  align-items: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  cursor: pointer;
+  background-color: #d11a2a;
+  -webkit-mask: url(./assets/delete.svg) no-repeat center;
+  mask: url(./assets/delete.svg) no-repeat center;
+}
