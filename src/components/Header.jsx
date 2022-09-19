@@ -57,63 +57,80 @@ function Header({ title, tabs, colors, activeColor }) {
     document.documentElement.style.setProperty("--dark-color", colors[key]);
     localStorage.setItem("primary", colors[key]);
   };
+  let openHamMenu = () => {
+    console.log("open ham menu");
+  };
 
   return (
     <header>
       <div className="headerWrapper container">
-        <h1>{title}</h1>
-
-        <ul>
-          {tabs.map((tab, index) => {
-            return (
-              <li key={index}>
-                <a
-                  href={`/${tab}`}
-                  className={`${tab === "home" ? "active" : ""}`}
-                >
-                  {tab}
-                </a>
-              </li>
-            );
-          })}
-          <li>
-            <div className="colorPaletteSwitch" onClick={openColorPalette}>
-              <div
-                className="primary"
-                style={{ backgroundColor: `${activeColor}` }}
-              ></div>
-              <div className="secondary"></div>
-            </div>
-            <div className="colorPalette grid-9 hidden">
-              {colors.map((color, index) => {
-                return (
-                  <div
-                    className="colorPaletteItem"
-                    key={index}
-                    onClick={() => {
-                      changeColor(index);
-                    }}
-                  >
-                    <div
-                      className="primary"
-                      style={{ backgroundColor: `${color}` }}
-                    ></div>
-                    <div className="secondary"></div>
-                  </div>
-                );
-              })}
-            </div>
-          </li>
-          <li className="switch">
-            <input
-              type="checkbox"
-              name="mode"
-              id="mode"
-              onClick={modeToggler}
+        <div className="logo">
+          <span
+            onClick={() => {
+              openHamMenu();
+            }}
+          >
+            <img
+              src="https://itsme-subid.github.io/Blog-2022/assets/hamburger.svg"
+              alt=""
             />
-            <span className="modeToggler" id="toggler"></span>
-          </li>
-        </ul>
+          </span>
+          <h1>{title}</h1>
+        </div>
+
+        <nav>
+          <ul>
+            {tabs.map((tab, index) => {
+              return (
+                <li key={index} className="generalTab">
+                  <a
+                    href={`/${tab}`}
+                    className={`${tab === "home" ? "active" : ""}`}
+                  >
+                    {tab}
+                  </a>
+                </li>
+              );
+            })}
+            <li>
+              <div className="colorPaletteSwitch" onClick={openColorPalette}>
+                <div
+                  className="primary"
+                  style={{ backgroundColor: `${activeColor}` }}
+                ></div>
+                <div className="secondary"></div>
+              </div>
+              <div className="colorPalette grid-9 hidden">
+                {colors.map((color, index) => {
+                  return (
+                    <div
+                      className="colorPaletteItem"
+                      key={index}
+                      onClick={() => {
+                        changeColor(index);
+                      }}
+                    >
+                      <div
+                        className="primary"
+                        style={{ backgroundColor: `${color}` }}
+                      ></div>
+                      <div className="secondary"></div>
+                    </div>
+                  );
+                })}
+              </div>
+            </li>
+            <li className="switch">
+              <input
+                type="checkbox"
+                name="mode"
+                id="mode"
+                onClick={modeToggler}
+              />
+              <span className="modeToggler" id="toggler"></span>
+            </li>
+          </ul>
+        </nav>
       </div>
     </header>
   );

@@ -10,8 +10,8 @@ function CreateNote({ notes, setNotes }) {
       title: noteTitle.value,
       content: noteContent.value,
     };
-    setNotes([...notes, newNote]);
-    localStorage.setItem("notes", JSON.stringify([...notes, newNote]));
+    setNotes([newNote, ...notes]);
+    localStorage.setItem("notes", JSON.stringify([newNote, ...notes]));
   };
   return (
     <div>

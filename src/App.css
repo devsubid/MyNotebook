@@ -30,6 +30,7 @@ header {
   top: 0;
   padding: 2rem 0;
   z-index: 1;
+  user-select: none;
   background-color: var(--dark-color);
   -webkit-box-shadow: 0 1px 10px 0 rgb(255 255 255 / 30%);
   -moz-box-shadow: 0 1px 10px 0 rgb(255 255 255 / 30%);
@@ -42,10 +43,21 @@ header {
   align-items: center;
 }
 
+header .logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+}
+
+header .logo span {
+  display: none;
+  align-items: center;
+}
+
 header h1 {
   font-size: 2rem;
   font-weight: 600;
-  cursor: pointer;
   text-transform: uppercase;
 }
 
@@ -183,7 +195,7 @@ header a.active {
   top: 5rem;
   width: 250px;
   height: 250px;
-  background-color: var(--color-primary);
+  background-color: var(--dark-color);
   -webkit-box-shadow: 0 1px 10px 0 rgb(255 255 255 / 20%);
   -moz-box-shadow: 0 1px 10px 0 rgb(255 255 255 / 20%);
   box-shadow: 0 1px 10px 0 rgb(255 255 255 / 20%);
@@ -223,6 +235,10 @@ header a.active {
 
 .grid-9 > * {
   margin: auto;
+}
+
+.hidden-full {
+  display: none;
 }
 
 .hidden {
@@ -296,6 +312,15 @@ header a.active {
 @media (max-width: 850px) {
   .notes {
     grid-template-columns: repeat(1, 1fr);
+  }
+  .generalTab {
+    display: none;
+  }
+  header .logo span {
+    display: flex;
+  }
+  .navSM{
+    display: block;
   }
 }
 
