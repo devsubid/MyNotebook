@@ -1,2 +1,2 @@
 # MyNotebook
-MyNotebook using react.jis
+MyNotebook using react.js
