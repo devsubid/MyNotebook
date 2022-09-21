@@ -237,10 +237,6 @@ header a.active {
   margin: auto;
 }
 
-.hidden-full {
-  display: none;
-}
-
 .hidden {
   transform: scale(0);
   visibility: hidden;
@@ -269,6 +265,10 @@ header a.active {
   border-radius: 0.375rem;
   caret-color: var(--light-color);
   width: 100%;
+}
+
+.inputs input {
+  letter-spacing: 0.05em;
 }
 
 .inputs input::placeholder,
@@ -309,6 +309,23 @@ header a.active {
   gap: 1rem;
 }
 
+.navSM {
+  display: none;
+  transform: translateY(0%);
+  opacity: 1;
+  visibility: visible;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.translate {
+  transform: translateY(-100%);
+  opacity: 0;
+  visibility: hidden;
+  z-index: -10;
+  color: transparent;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
 @media (max-width: 850px) {
   .notes {
     grid-template-columns: repeat(1, 1fr);
@@ -319,8 +336,51 @@ header a.active {
   header .logo span {
     display: flex;
   }
-  .navSM{
+  .navSM {
     display: block;
+    position: fixed;
+    top: 6.5rem;
+    left: 0;
+    background: var(--dark-color);
+    width: 100%;
+    padding: 1rem 0;
+    box-shadow: 0 10px 10px -10px rgb(255 255 255 / 30%);
+    z-index: -1;
+  }
+  .navSM ul {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    justify-content: center;
+  }
+  .navSM ul > li {
+    justify-content: center;
+  }
+  header h1 {
+    font-size: 1.75rem;
+  }
+  .colorPaletteSwitch,
+  .colorPaletteItem {
+    width: 1.75rem;
+    height: 1.75rem;
+  }
+  .modeToggler {
+    width: 3rem;
+    height: 1.75rem;
+  }
+  .modeToggler:before {
+    top: 0.15rem;
+    left: 0.15rem;
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  header ul {
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 400px) {
+  header ul {
+    gap: 0.65rem;
   }
 }
 
@@ -351,4 +411,37 @@ header a.active {
   background-color: #d11a2a;
   -webkit-mask: url(./assets/delete.svg) no-repeat center;
   mask: url(./assets/delete.svg) no-repeat center;
+}
+
+.light .note {
+  border-color: var(--dark-color);
+}
+
+.light .inputs button {
+  background-color: var(--dark-color);
+  color: var(--light-color);
+  border-color: var(--dark-color);
+}
+
+.light .inputs button:hover {
+  background-color: transparent;
+  border-color: var(--dark-color);
+  color: var(--dark-color);
+}
+
+.light .inputs button:active {
+  background-color: var(--dark-color);
+  color: var(--light-color);
+}
+
+.light .inputs input,
+.light .inputs textarea {
+  color: var(--dark-color);
+  caret-color: var(--dark-color);
+}
+
+.light .inputs input::placeholder,
+.light .inputs textarea::placeholder {
+  color: var(--dark-color);
+  opacity: 0.325;
 }

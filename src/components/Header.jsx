@@ -58,7 +58,8 @@ function Header({ title, tabs, colors, activeColor }) {
     localStorage.setItem("primary", colors[key]);
   };
   let openHamMenu = () => {
-    console.log("open ham menu");
+    let hamMenu = document.querySelector(".navSM");
+    hamMenu.classList.toggle("translate");
   };
 
   return (
@@ -129,6 +130,17 @@ function Header({ title, tabs, colors, activeColor }) {
               />
               <span className="modeToggler" id="toggler"></span>
             </li>
+          </ul>
+        </nav>
+        <nav className="navSM translate">
+          <ul>
+            {tabs.map((tab, index) => {
+              return (
+                <li key={index}>
+                  <a href={`/${tab}`}>{tab}</a>
+                </li>
+              );
+            })}
           </ul>
         </nav>
       </div>
