@@ -35,6 +35,7 @@ header {
   -webkit-box-shadow: 0 1px 10px 0 rgb(255 255 255 / 30%);
   -moz-box-shadow: 0 1px 10px 0 rgb(255 255 255 / 30%);
   box-shadow: 0 1px 10px 0 rgb(255 255 255 / 30%);
+  transition: all 0.15s ease;
 }
 
 .headerWrapper {
