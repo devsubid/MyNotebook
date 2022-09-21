@@ -1,7 +1,7 @@
 import React from "react";
 
 function Header({ title, tabs, colors, activeColor }) {
-  window.onload = () => {
+  window.addEventListener("load", () => {
     if (localStorage.getItem("mode") === "light") {
       let modeCheckbox = document.querySelector("#mode");
       modeCheckbox.checked = true;
@@ -17,7 +17,7 @@ function Header({ title, tabs, colors, activeColor }) {
         body.style.backgroundColor = primary;
       }
     }
-  };
+  });
   let modeToggler = () => {
     let modeCheckbox = document.querySelector("#mode");
     let body = document.querySelector("body");
