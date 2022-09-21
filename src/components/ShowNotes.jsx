@@ -16,7 +16,9 @@ function ShowNotes({ notes, setNotes }) {
               title="Delete this Note"
             ></div>
           </div>
-          <p>{note.content}</p>
+          <div>
+            <p>{note.content}</p>
+          </div>
         </div>
       );
     });

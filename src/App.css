@@ -63,7 +63,7 @@ header .logo span {
     no-repeat center;
   mask: url(https://itsme-subid.github.io/Blog-2022/assets/hamburger.svg)
     no-repeat center;
-    transition: all 0.15s ease;
+  transition: all 0.15s ease;
 }
 
 header h1 {
@@ -282,6 +282,11 @@ header a.active {
   letter-spacing: 0.05em;
 }
 
+.inputs textarea {
+  resize: horizontal;
+  overflow: auto;
+}
+
 .inputs input::placeholder,
 .inputs textarea::placeholder {
   color: var(--light-color);
@@ -408,11 +413,31 @@ header a.active {
   padding: 1rem;
   border: 1px solid var(--light-color);
   border-radius: 0.5rem;
-  max-height: 20rem;
 }
 
-.note {
+.note > div:nth-child(2) {
+  max-height: 20rem;
   overflow: auto;
+}
+
+@media (min-width: 850px) {
+  ::-webkit-scrollbar {
+    width: 0.25em;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+    margin-block: 0.45em;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--light-color);
+    border-radius: 0.5rem;
+  }
+
+  .light ::-webkit-scrollbar-thumb {
+    background: var(--dark-color);
+  }
 }
 
 .noteTop {
