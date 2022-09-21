@@ -85,7 +85,7 @@ function Header({ title, tabs, colors, activeColor }) {
               return (
                 <li key={index} className="generalTab">
                   <a
-                    href={`/MyNotebook/${tab}`}
+                    href={`/MyNotebook/`}
                     className={`${tab === "home" ? "active" : ""}`}
                   >
                     {tab}
@@ -137,7 +137,7 @@ function Header({ title, tabs, colors, activeColor }) {
             {tabs.map((tab, index) => {
               return (
                 <li key={index}>
-                  <a href={`/MyNotebook/${tab}`}>{tab}</a>
+                  <a href={`/MyNotebook/`}>{tab}</a>
                 </li>
               );
             })}
