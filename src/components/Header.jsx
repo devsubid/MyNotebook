@@ -70,12 +70,7 @@ function Header({ title, tabs, colors, activeColor }) {
             onClick={() => {
               openHamMenu();
             }}
-          >
-            <img
-              src="https://itsme-subid.github.io/Blog-2022/assets/hamburger.svg"
-              alt=""
-            />
-          </span>
+          ></span>
           <h1>{title}</h1>
         </div>
 

@@ -55,6 +55,17 @@ header .logo span {
   align-items: center;
 }
 
+.logo span {
+  width: 1.5rem;
+  height: 1.5rem;
+  background: var(--light-color);
+  -webkit-mask: url(https://itsme-subid.github.io/Blog-2022/assets/hamburger.svg)
+    no-repeat center;
+  mask: url(https://itsme-subid.github.io/Blog-2022/assets/hamburger.svg)
+    no-repeat center;
+    transition: all 0.15s ease;
+}
+
 header h1 {
   font-size: 2rem;
   font-weight: 600;
@@ -355,6 +366,10 @@ header a.active {
   .navSM ul > li {
     justify-content: center;
   }
+  .light .navSM {
+    background: var(--light-color);
+    box-shadow: 0 10px 10px -10px rgb(0 0 0 / 30%);
+  }
   header h1 {
     font-size: 1.75rem;
   }
@@ -449,4 +464,8 @@ header a.active {
 .light .inputs textarea::placeholder {
   color: var(--dark-color);
   opacity: 0.325;
+}
+
+.light .logo span {
+  background: var(--dark-color);
 }
