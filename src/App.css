@@ -376,6 +376,11 @@ header a.active {
   header ul {
     gap: 1.25rem;
   }
+  #mode:checked ~ .modeToggler::before {
+    left: calc(100% - 1.5rem - 0.15rem);
+    background: var(--light-color);
+    box-shadow: none;
+  }
 }
 
 @media (max-width: 400px) {
