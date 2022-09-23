@@ -61,6 +61,14 @@ function Header({ title, tabs, colors, activeColor }) {
     let hamMenu = document.querySelector(".navSM");
     hamMenu.classList.toggle("translate");
   };
+  let activeTab = (e) => {
+    let tab = document.querySelector(".active");
+    if (tab !== null) {
+      tab.classList.remove("active");
+    }
+    let currentTab = e.target;
+    currentTab.classList.add("active");
+  };
 
   return (
     <header>
@@ -82,6 +90,7 @@ function Header({ title, tabs, colors, activeColor }) {
                   <a
                     href={`/MyNotebook/`}
                     className={`${tab === "home" ? "active" : ""}`}
+                    onClick={activeTab}
                   >
                     {tab}
                   </a>
