@@ -1,6 +1,13 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
-function ShowNotes({ notes, setNotes }) {
+function ShowNotes({
+  notes,
+  setNotes,
+  setShowModal,
+  confirmDelete,
+  setConfirmDelete,
+}) {
+  const [element, setElement] = useState(0);
   let reverseNotes = notes.slice();
   let noteElements = () => {
     return reverseNotes.map((note, index) => {
@@ -24,12 +31,19 @@ function ShowNotes({ notes, setNotes }) {
     });
   };
   let deleteNote = (e) => {
-    let newNotes = reverseNotes.filter((note, index) => {
-      return index !== e;
-    });
-    localStorage.setItem("notes", JSON.stringify(newNotes));
-    setNotes(newNotes);
+    setShowModal(true);
+    setElement(e);
   };
+  useEffect(() => {
+    if (confirmDelete) {
+      let newNotes = reverseNotes.filter((note, index) => {
+        return index !== element;
+      });
+      localStorage.setItem("notes", JSON.stringify(newNotes));
+      setNotes(newNotes);
+      setConfirmDelete(false);
+    }
+  }, [confirmDelete]);
   return (
     <div className="notes">
       {notes.length !== 0 ? noteElements() : <p>No Notes to Display</p>}

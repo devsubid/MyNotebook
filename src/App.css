@@ -495,3 +495,95 @@ header a.active {
 .light .logo span {
   background: var(--dark-color);
 }
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  z-index: 10;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.15s ease;
+}
+
+.modalWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background: var(--dark-color);
+  color: var(--light-color);
+}
+
+.light .modalWrapper {
+  background: var(--light-color);
+  color: var(--dark-color);
+}
+
+.showModal {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal .cross {
+  position: relative;
+  width: 5rem;
+  height: 5rem;
+  cursor: pointer;
+  background-color: #d11a2a;
+  -webkit-mask: url(./assets/cross.svg) no-repeat center;
+  mask: url(./assets/cross.svg) no-repeat center;
+  transform: rotate(45deg);
+}
+
+.modal .confirmation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.modal .confirmation .buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.modal .confirmation .buttons .yes {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: #d11a2a;
+  color: var(--light-color);
+  cursor: pointer;
+  font-weight: bold;
+  font-size: medium;
+}
+
+.modal .confirmation .buttons .no {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: var(--light-color);
+  color: var(--dark-color);
+  cursor: pointer;
+  font-weight: bold;
+  font-size: medium;
+}
+
+.light .modal .confirmation .buttons .no {
+  background-color: var(--dark-color);
+  color: var(--light-color);
+}
