@@ -3,9 +3,10 @@ import Header from "./components/Header.jsx";
 import Notes from "./components/Notes.jsx";
 import About from "./components/About.jsx";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Contact from "./components/Contact";
 
 function App() {
-  let title = "itsme-Subid";
+  let title = "mynotebook";
   let tabs = ["home", "about", "contact"];
   let colors = [
     "#403030",
@@ -29,10 +30,13 @@ function App() {
           activeColor={activeColor}
         />
         <Switch>
-          <Route path="/MyNotebook/about">
+          <Route exact path="/MyNotebook/about">
             <About />
           </Route>
-          <Route path="/MyNotebook/">
+          <Route exact path="/MyNotebook/contact">
+            <Contact />
+          </Route>
+          <Route exact path="/MyNotebook/">
             <Notes />
           </Route>
         </Switch>

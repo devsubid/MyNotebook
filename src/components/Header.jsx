@@ -82,7 +82,9 @@ function Header({ title, tabs, colors, activeColor }) {
               openHamMenu();
             }}
           ></span>
-          <h1>{title}</h1>
+          <Link to="/MyNotebook/" style={{ padding: "0" }}>
+            <h1>{title}</h1>
+          </Link>
         </div>
 
         <nav>
