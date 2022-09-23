@@ -653,7 +653,6 @@ header nav a.active {
 }
 
 .open-source a {
-  margin-inline-start: 0.35rem;
   color: var(--color-primary);
   text-decoration: none;
 }
@@ -809,4 +808,42 @@ strong {
 
 .light .contact form .form-group textarea::placeholder {
   color: var(--dark-color);
+}
+
+.about .credits {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-block: 2rem;
+}
+
+.about .credits h3 {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.about .credits h3 .svg {
+  position: relative;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: var(--color-primary);
+  -webkit-mask: url(./assets/heart.svg) no-repeat center;
+  mask: url(./assets/heart.svg) no-repeat center;
+}
+
+.about .credits p {
+  font-size: 1.15em;
+  padding-block: 1rem;
+  font-weight: 300;
+}
+
+.about .credits a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.about .credits a:hover {
+  text-decoration: underline;
 }
