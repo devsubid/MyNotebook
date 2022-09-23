@@ -69,6 +69,8 @@ function Header({ title, tabs, colors, activeColor }) {
     }
     let currentTab = e.target;
     currentTab.classList.add("active");
+    let hamMenu = document.querySelector(".navSM");
+    hamMenu.classList.add("translate");
   };
 
   return (
@@ -142,7 +144,10 @@ function Header({ title, tabs, colors, activeColor }) {
             {tabs.map((tab, index) => {
               return (
                 <li key={index}>
-                  <Link to={`/MyNotebook/${tab === "home" ? "" : tab}`}>
+                  <Link
+                    to={`/MyNotebook/${tab === "home" ? "" : tab}`}
+                    onClick={activeTab}
+                  >
                     {tab}
                   </Link>
                 </li>
