@@ -1,6 +1,8 @@
 import "./App.css";
 import Header from "./components/Header.jsx";
 import Notes from "./components/Notes.jsx";
+import About from "./components/About.jsx";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
   let title = "itsme-Subid";
@@ -18,15 +20,24 @@ function App() {
   ];
   let activeColor = "#0d1117";
   return (
-    <div>
-      <Header
-        title={title}
-        tabs={tabs}
-        colors={colors}
-        activeColor={activeColor}
-      />
-      <Notes />
-    </div>
+    <Router>
+      <div>
+        <Header
+          title={title}
+          tabs={tabs}
+          colors={colors}
+          activeColor={activeColor}
+        />
+        <Switch>
+          <Route path="/MyNotebook/about">
+            <About />
+          </Route>
+          <Route path="/MyNotebook/">
+            <Notes />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
 

@@ -43,7 +43,7 @@ function ShowNotes({
       setNotes(newNotes);
       setConfirmDelete(false);
     }
-  }, [confirmDelete]);
+  });
   return (
     <div className="notes">
       {notes.length !== 0 ? noteElements() : <p>No Notes to Display</p>}

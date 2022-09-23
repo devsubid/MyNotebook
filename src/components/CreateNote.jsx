@@ -31,8 +31,8 @@ function CreateNote({ notes, setNotes }) {
           gap: "1rem",
         }}
       >
-        <input type="text" placeholder="Title" required />
-        <textarea placeholder="Write a note..." cols="30" rows="7" />
+        <input type="text" placeholder="Title" title="Write a title..." required />
+        <textarea placeholder="Write a note..." title="Write a note..." cols="30" rows="7" />
         <button type="submit" onClick={addNote}>
           Add
         </button>

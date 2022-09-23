@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import CreateNote from "./CreateNote.jsx";
 import ShowNotes from "./ShowNotes.jsx";
 import Modal from "./Modal.jsx";
@@ -6,12 +6,12 @@ import Modal from "./Modal.jsx";
 function Notes() {
   const [showModal, setShowModal] = useState(false);
   const [confirmDelete, setConfirmDelete] = useState(false);
-  window.onload = () => {
+  useEffect(() => {
     let notes = JSON.parse(localStorage.getItem("notes"));
     if (notes) {
       setNotes(notes);
     }
-  };
+  }, []);
   const [notes, setNotes] = useState([]);
   let notesStyle = {
     padding: "2rem 0",

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Header({ title, tabs, colors, activeColor }) {
   window.addEventListener("load", () => {
@@ -87,13 +88,13 @@ function Header({ title, tabs, colors, activeColor }) {
             {tabs.map((tab, index) => {
               return (
                 <li key={index} className="generalTab">
-                  <a
-                    href={`/MyNotebook/`}
+                  <Link
+                    to={`/MyNotebook/${tab}`}
                     className={`${tab === "home" ? "active" : ""}`}
                     onClick={activeTab}
                   >
                     {tab}
-                  </a>
+                  </Link>
                 </li>
               );
             })}
@@ -141,7 +142,7 @@ function Header({ title, tabs, colors, activeColor }) {
             {tabs.map((tab, index) => {
               return (
                 <li key={index}>
-                  <a href={`/MyNotebook/`}>{tab}</a>
+                  <Link to={`/MyNotebook/${tab}`}>{tab}</Link>
                 </li>
               );
             })}
