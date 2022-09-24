@@ -46,7 +46,7 @@ function Contact() {
     });
   };
   return (
-    <div className="contact container">
+    <div className="contactPage container">
       <h2>
         <div className="svg"></div> Contact me
       </h2>

@@ -19,24 +19,20 @@ function App() {
     "#0d1117",
     "#262626",
   ];
-  let activeColor = "#0d1117";
   return (
     <Router>
       <div>
-        <Header
-          title={title}
-          tabs={tabs}
-          colors={colors}
-          activeColor={activeColor}
-        />
         <Switch>
           <Route exact path="/MyNotebook/about">
+            <Header title={title} tabs={tabs} colors={colors} />
             <About />
           </Route>
           <Route exact path="/MyNotebook/contact">
+            <Header title={title} tabs={tabs} colors={colors} />
             <Contact />
           </Route>
           <Route exact path="/MyNotebook/">
+            <Header title={title} tabs={tabs} colors={colors} />
             <Notes />
           </Route>
         </Switch>

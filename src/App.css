@@ -665,11 +665,11 @@ strong {
   font-weight: 600;
 }
 
-.contact {
+.contactPage {
   padding-block: 2rem;
 }
 
-.contact h2 {
+.contactPage h2 {
   font-size: 1.5rem;
   font-weight: 500;
   text-transform: uppercase;
@@ -678,7 +678,7 @@ strong {
   align-items: center;
 }
 
-.contact h2 .svg {
+.contactPage h2 .svg {
   position: relative;
   width: 1.5rem;
   height: 1.5rem;
@@ -687,13 +687,13 @@ strong {
   mask: url(./assets/mail.svg) no-repeat center;
 }
 
-.contact p {
+.contactPage p {
   font-size: 1.15em;
   padding-block: 1rem;
   font-weight: 300;
 }
 
-.contact form {
+.contactPage form {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -702,7 +702,7 @@ strong {
   padding-block: 1rem;
 }
 
-.contact form .form-group {
+.contactPage form .form-group {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -711,12 +711,12 @@ strong {
   gap: 1rem;
 }
 
-.contact form .form-group label {
+.contactPage form .form-group label {
   font-size: 1.15em;
   font-weight: 500;
 }
 
-.contact form .form-group input {
+.contactPage form .form-group input {
   width: 100%;
   outline: none;
   padding: 0.75rem 1rem;
@@ -729,7 +729,7 @@ strong {
   transition: all 0.15 ease;
 }
 
-.contact form .form-group textarea {
+.contactPage form .form-group textarea {
   width: 100%;
   outline: none;
   padding: 0.75rem 1rem;
@@ -741,26 +741,26 @@ strong {
   font-weight: 300;
 }
 
-.contact form .form-group textarea:focus {
+.contactPage form .form-group textarea:focus {
   border: 1px solid var(--color-primary);
 }
 
-.contact form .form-group input:focus {
+.contactPage form .form-group input:focus {
   border: 1px solid var(--color-primary);
 }
 
-.contact form .form-group input::placeholder {
+.contactPage form .form-group input::placeholder {
   color: var(--light-color);
   opacity: 0.5;
   transition: all 0.15 ease;
 }
-.contact form .form-group textarea::placeholder {
+.contactPage form .form-group textarea::placeholder {
   color: var(--light-color);
   opacity: 0.5;
   transition: all 0.15 ease;
 }
 
-.contact form button[type="submit"] {
+.contactPage form button[type="submit"] {
   padding: 0.85rem 1.5rem;
   font-size: 1.25rem;
   font-weight: 500;
@@ -773,40 +773,40 @@ strong {
   transition: all 0.15s ease;
 }
 
-.contact form button[type="submit"]:hover {
+.contactPage form button[type="submit"]:hover {
   background-color: transparent;
   color: var(--light-color);
   border-color: var(--light-color);
 }
 
-.light .contact form button[type="submit"] {
+.light .contactPage form button[type="submit"] {
   background-color: var(--dark-color);
   color: var(--light-color);
 }
 
-.light .contact form button[type="submit"]:hover {
+.light .contactPage form button[type="submit"]:hover {
   background-color: transparent;
   color: var(--dark-color);
   border-color: var(--dark-color);
 }
 
-.light .contact form .form-group input {
+.light .contactPage form .form-group input {
   color: var(--dark-color);
   border: 1px solid rgb(0 0 0 / 30%);
   caret-color: var(--dark-color);
 }
 
-.light .contact form .form-group textarea {
+.light .contactPage form .form-group textarea {
   color: var(--dark-color);
   border: 1px solid rgb(0 0 0 / 30%);
   caret-color: var(--dark-color);
 }
 
-.light .contact form .form-group input::placeholder {
+.light .contactPage form .form-group input::placeholder {
   color: var(--dark-color);
 }
 
-.light .contact form .form-group textarea::placeholder {
+.light .contactPage form .form-group textarea::placeholder {
   color: var(--dark-color);
 }
 

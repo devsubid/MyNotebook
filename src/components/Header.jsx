@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 
-function Header({ title, tabs, colors, activeColor }) {
-  window.addEventListener("load", () => {
+function Header({ title, tabs, colors }) {
+  useEffect(() => {
     if (localStorage.getItem("mode") === "light") {
       let modeCheckbox = document.querySelector("#mode");
       modeCheckbox.checked = true;
@@ -18,7 +18,21 @@ function Header({ title, tabs, colors, activeColor }) {
         body.style.backgroundColor = primary;
       }
     }
+  }, []);
+
+  window.addEventListener("load", () => {
+    if (window.location.pathname === "/MyNotebook/") {
+      document.querySelector(".home").classList.add("active");
+      console.log(window.location.pathname);
+    } else if (window.location.pathname === "/MyNotebook/about") {
+      document.querySelector(".about").classList.add("active");
+      console.log(window.location.pathname);
+    } else if (window.location.pathname === "/MyNotebook/contact") {
+      document.querySelector(".contact").classList.add("active");
+      console.log(window.location.pathname);
+    }
   });
+
   let modeToggler = () => {
     let modeCheckbox = document.querySelector("#mode");
     let body = document.querySelector("body");
@@ -94,7 +108,7 @@ function Header({ title, tabs, colors, activeColor }) {
                 <li key={index} className="generalTab">
                   <Link
                     to={`/MyNotebook/${tab === "home" ? "" : tab}`}
-                    className={`${tab === "home" ? "active" : ""}`}
+                    className={`${tab}`}
                     onClick={activeTab}
                   >
                     {tab}
@@ -106,7 +120,7 @@ function Header({ title, tabs, colors, activeColor }) {
               <div className="colorPaletteSwitch" onClick={openColorPalette}>
                 <div
                   className="primary"
-                  style={{ backgroundColor: `${activeColor}` }}
+                  style={{ backgroundColor: `--light-color` }}
                 ></div>
                 <div className="secondary"></div>
               </div>
@@ -148,6 +162,7 @@ function Header({ title, tabs, colors, activeColor }) {
                 <li key={index}>
                   <Link
                     to={`/MyNotebook/${tab === "home" ? "" : tab}`}
+                    className={`${tab}`}
                     onClick={activeTab}
                   >
                     {tab}
