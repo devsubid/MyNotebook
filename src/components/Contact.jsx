@@ -14,6 +14,8 @@ function Contact() {
       if (xhr.status === 200) {
         let status = document.getElementById("status");
         status.innerHTML = "Message Sent Successfully.";
+        let form = document.getElementById("contactForm");
+        form.reset();
         setTimeout(() => {
           status.innerHTML = "";
         }, 5000);

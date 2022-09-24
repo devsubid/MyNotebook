@@ -5,7 +5,6 @@ function modal({ setShowModal, setConfirmDelete }) {
     let modal = document.querySelector(".modal");
     modal.classList.toggle("showModal");
     setShowModal(false);
-    // console.log(e.target.textContent === "Delete");
     if (e.target.textContent === "Delete") {
       setConfirmDelete(true);
     } else {

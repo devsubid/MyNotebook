@@ -5,7 +5,7 @@ function CreateNote({ notes, setNotes }) {
     e.preventDefault();
     let noteTitle = document.querySelector("input[type='text']");
     let noteContent = document.querySelector("textarea");
-    // noteTitle.value = noteContent.value = "";
+    noteTitle.value = noteContent.value = "";
     let newNote = {
       title: noteTitle.value,
       content: noteContent.value,
