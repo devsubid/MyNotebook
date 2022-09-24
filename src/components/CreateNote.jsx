@@ -3,15 +3,15 @@ import React from "react";
 function CreateNote({ notes, setNotes }) {
   let addNote = (e) => {
     e.preventDefault();
-    let noteTitle = document.querySelector("input[type='text']");
-    let noteContent = document.querySelector("textarea");
-    noteTitle.value = noteContent.value = "";
+    let noteTitle = document.querySelector("#newTitle");
+    let noteContent = document.querySelector("#newContent");
     let newNote = {
       title: noteTitle.value,
       content: noteContent.value,
     };
     setNotes([newNote, ...notes]);
     localStorage.setItem("notes", JSON.stringify([newNote, ...notes]));
+    noteTitle.value = noteContent.value = "";
   };
   return (
     <div>
@@ -31,8 +31,20 @@ function CreateNote({ notes, setNotes }) {
           gap: "1rem",
         }}
       >
-        <input type="text" placeholder="Title" title="Write a title..." required />
-        <textarea placeholder="Write a note..." title="Write a note..." cols="30" rows="7" />
+        <input
+          id="newTitle"
+          type="text"
+          placeholder="Title"
+          title="Write a title..."
+          required
+        />
+        <textarea
+          id="newContent"
+          placeholder="Write a note..."
+          title="Write a note..."
+          cols="30"
+          rows="7"
+        />
         <button type="submit" onClick={addNote}>
           Add
         </button>
