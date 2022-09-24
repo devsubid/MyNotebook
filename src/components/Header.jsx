@@ -18,9 +18,6 @@ function Header({ title, tabs, colors }) {
         body.style.backgroundColor = primary;
       }
     }
-  }, []);
-
-  window.addEventListener("load", () => {
     if (window.location.pathname === "/MyNotebook/") {
       document.querySelector(".home").classList.add("active");
       console.log(window.location.pathname);
@@ -31,7 +28,7 @@ function Header({ title, tabs, colors }) {
       document.querySelector(".contact").classList.add("active");
       console.log(window.location.pathname);
     }
-  });
+  }, []);
 
   let modeToggler = () => {
     let modeCheckbox = document.querySelector("#mode");
