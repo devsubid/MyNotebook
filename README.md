@@ -22,5 +22,5 @@ Go to Project Directory and open `Command Prompt`
 ```
 
 ```bash
-  git@github.com:itsme-Subid/MyNotebook.git .
+  git clone git@github.com:itsme-Subid/MyNotebook.git
 ```
